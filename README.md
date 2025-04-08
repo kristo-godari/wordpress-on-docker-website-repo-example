@@ -20,6 +20,16 @@ Your website repo needs to have the following folders and files in the root:
 ## How to use
 This project is meant to have a git submodule for the deployment, check deployment repository here: [Wordpress on Docker](https://github.com/kristo-godari/wordpress-on-docker) 
 
+## Replace placehoders
+Under the env folder all files have {placeholder} variable. Replace this with real values. 
+
+## Add ssh key
+Update the ssh/prod-key.pem with the your production ssh key.
+
+## Add SSL certificate and key
+Update the ssl-certs/ssl.crt with the SSL certificate.
+Update the ssl-certs/ssl.key with the SSL key.
+
 
 ## Add git submodule
 - Make sure you don't have a deployment folder.
