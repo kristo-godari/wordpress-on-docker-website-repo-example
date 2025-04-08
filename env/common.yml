@@ -1,0 +1,11 @@
+DOCKER_HUB_URL: index.docker.io
+DOCKER_HUB_USERNAME: {placeholder}
+DOCKER_HUB_PASSWORD: {placeholder}
+DOCKER_HUB_REPOSITORY: {placeholder}
+IMAGE_TAG: {placeholder} #ex: v1
+DOMAIN_NAME: {placeholder} #ex: example.com
+
+DB_NAME: {placeholder}
+DB_USER: {placeholder} 
+DB_PASSWORD: {placeholder}
+DB_HOST: {placeholder}

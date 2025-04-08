@@ -1,0 +1,64 @@
+image: kristogodari/bitbucket-ci-runner-wordpress-on-docker:v2
+
+pipelines:
+  custom:
+    build-and-publish-docker-images:
+      - parallel:
+        - step:
+            name: 'Build docker images'
+            script:
+              - git submodule init
+              - git submodule update
+              - cd deployment/ansible 
+              - ansible-playbook playbooks/build-docker-images.yaml
+              - ansible-playbook playbooks/publish-docker-images.yaml
+            services:
+              - docker
+    deploy-docker-containers:
+      - parallel:
+        - step:
+            name: 'Deploy docker containers'
+            deployment: Production
+            script:
+              - git submodule init
+              - git submodule update
+              - cd deployment/ansible 
+              - ansible-playbook playbooks/deploy-docker-containers.yaml  -e "env=prod"
+            services:
+              - docker
+    deploy-docker-volumes: 
+      - parallel:
+        - step:
+            name: 'Deploy docker volumes'
+            deployment: Production
+            script:
+              - git submodule init
+              - git submodule update
+              - cd deployment/ansible 
+              - ansible-playbook playbooks/deploy-docker-volumes.yaml  -e "env=prod version=dev"
+            services:
+              - docker
+    install-docker-on-vm: 
+      - parallel:
+        - step:
+            name: 'Install docker on VM'
+            deployment: Production
+            script:
+              - git submodule init
+              - git submodule update
+              - cd deployment/ansible 
+              - ansible-playbook playbooks/install-docker-on-ubuntu.yaml
+            services:
+              - docker
+    backup-prod-volumes: 
+      - parallel:
+        - step:
+            name: 'Backup prod volumes'
+            deployment: Production
+            script:
+              - git submodule init
+              - git submodule update
+              - cd deployment/ansible 
+              - ansible-playbook playbooks/backup-docker-volumes.yaml -e "env=local version=prod"
+            services:
+              - docker

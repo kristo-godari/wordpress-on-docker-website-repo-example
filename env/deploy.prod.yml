@@ -1,0 +1,8 @@
+DB_ROOT_PASSWORD: {placeholder}
+DEPLOYMENT_ENV: prod
+DOCKER_VOLUME_VERSION: prod
+TIME_ZONE: Europe/Zurich
+
+AWS_ACCESS_KEY_ID: {placeholder}
+AWS_SECRET_ACCESS_KEY: {placeholder}
+AWS_BACKUP_BUCKET: {placeholder}

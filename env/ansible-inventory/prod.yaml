@@ -1,0 +1,11 @@
+all:
+  hosts:
+    prod_host:
+      ansible_connection: ssh
+      ansible_host: {placeholder} #ip address
+      ansible_user: {placeholder} #host username
+      ansible_ssh_private_key_file: ../../ssh/prod-key.pem
+
+prod_hosts:
+  hosts:
+    prod_host:

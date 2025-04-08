@@ -1,0 +1,19 @@
+# example: https://site.com
+SITE_URL: https://{placeholder}.{placeholder}
+
+# wordpress settings, can be uuid format
+AUTH_KEY: {placeholder}
+SECURE_AUTH_KEY: {placeholder}
+LOGGED_IN_KEY: {placeholder}
+NONCE_KEY: {placeholder}
+AUTH_SALT: {placeholder}
+SECURE_AUTH_SALT: {placeholder}
+LOGGED_IN_SALT: {placeholder}
+NONCE_SALT: {placeholder}
+
+# check lengh limit and special characters. 
+LITESPEED_ADMIN_USERNAME: {placeholder}
+LITESPEED_ADMIN_PASSWORD: {placeholder}
+
+# update with wanted version
+WORDPRESS_VERSION: 6.7.2
