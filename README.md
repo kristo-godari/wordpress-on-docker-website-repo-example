@@ -34,3 +34,6 @@ Update the ssl-certs/ssl.key with the SSL key.
 ## Add git submodule
 - Make sure you don't have a deployment folder.
 - Create submodule `git submodule update --init --recursive`. This will create the deployment folder and clone the git repo inside.
+- If this does not work to add the submodule, you can try:
+  - `git submodule add https://github.com/kristo-godari/wordpress-on-docker deployment`
+  - `git submodule update --init --recursive`
